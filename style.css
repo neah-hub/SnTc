@@ -1,0 +1,520 @@
+body {
+    color: #EFA9AE;
+    font: 22px monospace;
+    background: linear-gradient(135deg, #190B28, #E55381);
+    /* Purple to pink gradient */
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    /* Adjust grid spacing */
+    z-index: 0;
+    /* Behind main content, but in front of background */
+    pointer-events: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-offset-170 {
+  display: block;
+  height: 135px;
+  margin-top: -170px;
+  visibility: hidden;
+}
+
+.scroll-offset-40 {
+  display: block;
+  height: 0px;
+  margin-top: -180px;
+  padding-top: 20px;  
+  visibility: hidden;
+}
+
+/* Base Navbar */
+.navbar-wrapper {
+    position: fixed;
+    top: 10px;
+    /* spacing from the top */
+    left: 10px;
+    /* spacing from the left */
+    right: 10px;
+    /* spacing from the right */
+    z-index: 1000;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 15px 40px;
+    border-radius: 12px;
+    /* Optional: rounded edges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+
+.nav-left {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Navigation links */
+.nav-links {
+    list-style: none;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #EFA9AE;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #190B28;
+}
+
+/* Hamburger menu icon */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #EFA9AE;
+    grid-column: 3;
+    justify-self: end;
+}
+
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #01bcd0;
+    padding: 10px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    z-index: 11;
+}
+
+.neon-wave {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+}
+
+.neon-wave span {
+    display: inline-block;
+    text-shadow:
+        0 0 5px #E55381,
+        0 0 10px #E55381,
+        0 0 20px #E55381,
+        0 0 40px #E55381,
+        0 0 80px #E55381;
+    animation: wave 1.6s infinite ease-in-out;
+}
+
+.neon-wave span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.neon-wave span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.neon-wave span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.neon-wave span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.neon-wave span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.neon-wave span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.neon-wave span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.neon-wave span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.neon-wave span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.neon-wave span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.neon-wave span:nth-child(11) {
+    animation-delay: 0.5s;
+}
+
+.neon-wave span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.neon-wave span:nth-child(13) {
+    animation-delay: 0.6s;
+}
+
+.neon-wave span:nth-child(14) {
+    animation-delay: 0.65s;
+}
+
+.neon-wave span:nth-child(15) {
+    animation-delay: 0.7s;
+}
+
+.neon-wave span:nth-child(16) {
+    animation-delay: 0.75s;
+}
+
+.neon-wave span:nth-child(17) {
+    animation-delay: 0.8s;
+}
+
+.neon-wave span:nth-child(18) {
+    animation-delay: 0.85s;
+}
+
+.neon-wave span:nth-child(19) {
+    animation-delay: 0.9s;
+}
+
+.neon-wave span:nth-child(20) {
+    animation-delay: 0.95s;
+}
+
+.neon-wave span:nth-child(21) {
+    animation-delay: 1s;
+}
+
+.neon-wave span:nth-child(22) {
+    animation-delay: 1.05s;
+}
+
+.neon-wave span:nth-child(23) {
+    animation-delay: 1.1s;
+}
+
+.neon-wave span:nth-child(24) {
+    animation-delay: 1.15s;
+}
+
+.neon-wave span:nth-child(25) {
+    animation-delay: 1.2s;
+}
+
+.neon-wave span:nth-child(26) {
+    animation-delay: 1.25s;
+}
+
+.neon-wave span:nth-child(27) {
+    animation-delay: 1.3s;
+}
+
+.neon-wave span:nth-child(28) {
+    animation-delay: 1.35s;
+}
+
+.neon-wave span:nth-child(29) {
+    animation-delay: 1.4s;
+}
+
+.neon-wave span:nth-child(30) {
+    animation-delay: 1.45s;
+}
+
+/* adjust as per total spans */
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+.cursor {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Anonymous Pro', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Blinking cursor as glowing bar */
+.cursor::after {
+    content: '|';
+    position: absolute;
+    right: 0;
+    color: #00d4ff;
+    animation: blinkingCursor 0.8s steps(1) infinite;
+    text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff;
+}
+
+/* Typewriter effect */
+.typewriter-animation {
+    width: 32ch;
+    /* 👈 number of characters in your phrase */
+    animation: typewriter 3.5s steps(32) 0.7s 1 normal both;
+}
+
+/* Typewriter keyframe */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 32ch;
+    }
+
+    /* 👈 match width to text length */
+}
+
+/* Cursor blink */
+@keyframes blinkingCursor {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    /* NEW: allow items to wrap on smaller screens */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px;
+    color: white;
+    backdrop-filter: blur(4px);
+    z-index: -100;
+}
+
+.about-section p {
+    flex: 1;
+    font-size: 22px;
+    line-height: 1.6;
+    padding: 20px 50px;
+    min-width: 250px;
+    /* Prevents collapsing too small */
+    box-sizing: border-box;
+}
+
+.about-section img {
+    flex-shrink: 0;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-section p {
+        padding: 15px 20px;
+    }
+
+    .about-section img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
+
+.image-link {
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #40fec0;
+    display: inline-block;
+    /* Helps center inline content */
+}
+
+.image-link * {
+    text-decoration: none !important;
+    color: #40fec0 !important;
+    font-size: 50px;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-section p {
+        margin-bottom: 20px;
+    }
+}
+
+/* Container holding all particles */
+#particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    /* So it stays in the background */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Individual particle style */
+.particle {
+    position: absolute;
+    background-color: #190B28;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+@media (max-width: 789px) {
+    .navbar {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 30vw;
+        /* Responsive: use % of viewport width */
+        background-color: #E55381;
+        border-radius: 20px;
+        padding: 15px 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 26px;
+        color: #EFA9AE;
+        cursor: pointer;
+        margin-left: auto;
+        padding-right: 30px;
+    }
+
+    .about-section p {
+        padding: 15px 20px;
+    }
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: -80px;
+  color: #EFA9AE;
+  text-shadow: 0 0 10px #EFA9AE, 0 0 20px #E55381;
+}
+

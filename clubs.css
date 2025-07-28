@@ -1,0 +1,196 @@
+/* CLUBS SECTION CLEAN CSS */
+
+.dna-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.strand {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px; /* Even more spacing */
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+  padding: 20px;
+  justify-content: center; /* Center hexagons horizontally */
+}
+
+.flip-container {
+  perspective: 1000px;
+  width: 200px; /* Increased size */
+  height: 173.2px; /* 200 * sqrt(3)/2 * 2 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flipper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg) scale(2); /* Zoom 2x */
+  z-index: 10;
+}
+
+.club-node {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  margin: 75px 0; /* half of height */
+  background-color: #190B28;
+  color: #EFA9AE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem;
+  backface-visibility: hidden;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+  /* 👇 White ghost hexagon glow effect */
+  box-shadow:
+    0 0 0 10px rgba(255, 255, 255, 0.05),
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff;
+}
+
+.club-node.back {
+  background-color: #EFA9AE;
+  color: #190B28;
+  transform: rotateY(180deg);
+  box-shadow: 0 0 20px #EFA9AE, 0 0 40px #E55381;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  backface-visibility: hidden;
+}
+
+.club-node.back a {
+  color: #190B28;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-node.back a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+
+
+
+/* Sparkle Stars */
+.sparkle {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #fff;
+  animation: sparkleFloat 3s ease-out forwards;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  text-shadow: 0 0 8px white, 0 0 16px white, 0 0 24px #EFA9AE;
+}
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Flip Pulse Animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #EFA9AE, 0 0 20px #E55381;
+  }
+  50% {
+    box-shadow: 0 0 20px #EFA9AE, 0 0 30px #E55381;
+  }
+  100% {
+    box-shadow: 0 0 10px #EFA9AE, 0 0 20px #E55381;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .strand {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px; /* Increased spacing */
+    justify-content: center;
+  }
+  .flip-container {
+    width: 180px;
+    height: 155.9px;
+  }
+  .club-node {
+    font-size: 0.95rem;
+    padding: 15px;
+    width: 180px;
+    height: 130px;
+    margin: 65px 0;
+  }
+  .club-node.back {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .strand {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    justify-content: center;
+  }
+  .flip-container {
+    width: 160px;
+    height: 138.6px;
+  }
+  .club-node {
+    font-size: 0.9rem;
+    padding: 15px;
+    width: 160px;
+    height: 115px;
+    margin: 57.5px 0;
+  }
+  .club-node.back {
+    font-size: 0.75rem;
+  }
+}
