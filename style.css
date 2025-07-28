@@ -40,7 +40,7 @@ html {
 
 .scroll-offset-40 {
   display: block;
-  height: 0px;
+  height: 30px;
   margin-top: -180px;
   padding-top: 20px;  
   visibility: hidden;
